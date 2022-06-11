@@ -1,4 +1,5 @@
 steps:
+# Build Links Website
 - name: 'gcr.io/cloud-builders/docker'
   id: Build the links image
   args: [
@@ -8,13 +9,13 @@ steps:
     "${_PATH}",
   ]
 - name: 'gcr.io/cloud-builders/docker'
-  id: Push new image
+  id: Push new Links image
   args: [
     "push",
     "gcr.io/$PROJECT_ID/site-links",
   ]
 - name: 'gcr.io/cloud-builders/gcloud'
-  id: Deploy to Cloud run
+  id: Deploy Links to Cloud Run
   args: [
     "run",
     "deploy",
