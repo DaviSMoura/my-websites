@@ -7,6 +7,17 @@ steps:
     "gcr.io/$PROJECT_ID/site-links",
     "${_PATH}",
   ]
+# Depoly to cloud run
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: [
+    "run",
+    "deploy",
+    "site-links",
+    "--image",
+    "gcr.io/$PROJECT_ID/site-links",
+    "--region",
+    "us-central1",
+  ]
 
 substitutions:
   _PATH: .
