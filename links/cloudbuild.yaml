@@ -1,0 +1,12 @@
+steps:
+# Build the links image
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+    "build",
+    "-t",
+    "gcr.io/$PROJECT_ID/site-links",
+    "./links/",
+  ]
+
+images:
+  - "gcr.io/$PROJECT_ID/site-links"
