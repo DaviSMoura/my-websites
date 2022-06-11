@@ -5,8 +5,11 @@ steps:
     "build",
     "-t",
     "gcr.io/$PROJECT_ID/site-links",
-    "./links/",
+    "${_PATH}",
   ]
+
+substitutions:
+  _PATH: .
 
 images:
   - "gcr.io/$PROJECT_ID/site-links"
