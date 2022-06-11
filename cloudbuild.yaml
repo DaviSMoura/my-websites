@@ -1,7 +1,33 @@
 steps:
+# Build Website Website
+- name: 'gcr.io/cloud-builders/docker'
+  id: Build the Site image
+  args: [
+    "build",
+    "-t",
+    "gcr.io/$PROJECT_ID/site",
+    "links",
+  ]
+- name: 'gcr.io/cloud-builders/docker'
+  id: Push new Site image
+  args: [
+    "push",
+    "gcr.io/$PROJECT_ID/site",
+  ]
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: Deploy Site to Cloud Run
+  args: [
+    "run",
+    "deploy",
+    "site",
+    "--image",
+    "gcr.io/$PROJECT_ID/site",
+    "--region",
+    "us-central1",
+  ]
 # Build Links Website
 - name: 'gcr.io/cloud-builders/docker'
-  id: Build the links image
+  id: Build the Links image
   args: [
     "build",
     "-t",
@@ -28,3 +54,4 @@ steps:
 
 images:
   - "gcr.io/$PROJECT_ID/site-links"
+  - "gcr.io/$PROJECT_ID/site"
