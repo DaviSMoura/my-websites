@@ -1,19 +1,19 @@
 <script setup>
+import MeCard from './components/MeCard.vue'
 </script>
 
-<template>
-  <h1 class="text-3xl font-bold underline">
-    Em construção
-  </h1>
+<template lang="pug">
+#app
+  .grid.grid-cols-12.gap-10
+    .col-start-2.col-span-10.md_col-start-4.md_col-span-6
+      me-card
 </template>
 
 <style>
+</style>
+
+<style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding-top: 60px
 }
 </style>
