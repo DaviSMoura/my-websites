@@ -3,27 +3,9 @@ import VLazyImage from 'v-lazy-image'
 
 const pictures = [
   {
-    name: 'Rio de Janeiro',
-    subtitle: 'Photos from Beach in Brazil',
-    tags: ['beach', 'shotoniphone', 'rj'],
-    photos: [
-      { src: 'https://davimoura.imgix.net/rj1.jpg?auto=compress' },
-      { src: 'https://davimoura.imgix.net/rj2.jpg?auto=compress' },
-    ]
-  },
-  {
-    name: 'Av. Paulista',
-    subtitle: 'Pictures shot on a rainy day in the a famous street in São Paulo.',
-    tags: ['rain', 'shotoniphone', 'sp'],
-    photos: [
-      { src: 'https://davimoura.imgix.net/sp1.jpg?auto=compress' },
-      { src: 'https://davimoura.imgix.net/sp2.jpg?auto=compress' },
-    ]
-  },
-  {
     name: 'Politic Event',
     subtitle: 'Pictures shot from event "Moro no Rio" on Leblon - RJ. Thanks to MBL & Vem Pra Rua to make this happen.',
-    tags: ['politic', '50mm', 'rj'],
+    tags: ['politic', 'rj'],
     photos: [
       { src: 'https://davimoura.imgix.net/mir1.jpg?auto=compress', subtitle: "Ex-judge Sérgio Moro with supporters" },
       { src: 'https://davimoura.imgix.net/mir2.jpg?auto=compress', subtitle: "Ex-judge Sérgio Moro speaking" },
@@ -33,9 +15,50 @@ const pictures = [
     ]
   },
   {
+    name: 'Rio de Janeiro',
+    subtitle: 'Photos taken in the open air on the streets of RJ.',
+    tags: ['beach', 'rj'],
+    photos: [
+      { src: 'https://davimoura.imgix.net/rj1.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/rj2.jpg?auto=compress' },
+    ]
+  },
+  {
+    name: 'Meeting',
+    subtitle: 'Photos taken in Niterói - Internal meeting "MBL Day".',
+    tags: ['rj', 'meeting'],
+    photos: [
+      { src: 'https://davimoura.imgix.net/mblday1.JPG?auto=compress' },
+      { src: 'https://davimoura.imgix.net/mblday2.JPG?auto=compress' },
+      { src: 'https://davimoura.imgix.net/mblday3.JPG?auto=compress' },
+    ]
+  },
+  {
+    name: 'Bridal Shower',
+    subtitle: 'Photos taken from Matheus & Fabiane event.',
+    tags: ['marry', 'rj'],
+    photos: [
+      { src: 'https://davimoura.imgix.net/chamf1.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/chamf2.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/chamf3.jpg?auto=compress' },
+    ]
+  },
+  {
+    name: 'Church Event',
+    subtitle: 'Pictures from religious event "SALT".',
+    tags: ['church', 'salt'],
+    photos: [
+      { src: 'https://davimoura.imgix.net/salt1.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/salt2.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/salt3.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/salt4.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/salt5.jpg?auto=compress' },
+    ]
+  },
+  {
     name: 'Politic Events',
     subtitle: 'Pictures shot on "Congresso MBL" in Mooca - SP.',
-    tags: ['politic', 'sp', 'shotoniphone'],
+    tags: ['politic', 'sp'],
     photos: [
       { src: 'https://davimoura.imgix.net/congmbl1.jpg?auto=compress' },
       { src: 'https://davimoura.imgix.net/congmbl2.jpg?auto=compress', subtitle: "Congressman Kim Kataguiri doing an interview" },
@@ -45,8 +68,8 @@ const pictures = [
   },
   {
     name: 'Protests - 12/09',
-    subtitle: 'Pictures shot on Copacabana - SP.',
-    tags: ['protest', 'rj', 'shotoniphone'],
+    subtitle: 'Pictures shot on Copacabana - RJ.',
+    tags: ['protest', 'rj'],
     photos: [
       { src: 'https://davimoura.imgix.net/protest1.jpg?auto=compress' },
       { src: 'https://davimoura.imgix.net/protest2.jpg?auto=compress', subtitle: "Letícia Arsenio." },
@@ -55,13 +78,12 @@ const pictures = [
     ]
   },
   {
-    name: 'Church Event',
-    subtitle: 'Pictures from religious event "SALT".',
-    tags: ['church', 'rj', 'salt'],
+    name: 'Av. Paulista',
+    subtitle: 'Photos taken on a rainy day on a famous street in São Paulo.',
+    tags: ['rain', 'sp'],
     photos: [
-      { src: 'https://davimoura.imgix.net/salt1.jpg?auto=compress' },
-      { src: 'https://davimoura.imgix.net/salt2.jpg?auto=compress' },
-      { src: 'https://davimoura.imgix.net/salt3.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/sp1.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/sp2.jpg?auto=compress' },
     ]
   },
 ]
@@ -71,7 +93,7 @@ const pictures = [
 .bg-secondary.text-secondary-content
   .md_container.md_mx-auto.py-8.md_py-16.mx-6
     .h1.font-3xl.sm_text-5xl.font-bold Events Portfolio
-    .h1.font-subtitle.sm_text-3xl.font-semibold Im not a professional photographer but its a hobby.
+    .h1.sm_text-xl.font-semibold "I take pictures while my friends make history."
 .md_container.md_mx-auto.mx-6
   .pt-6.md_pt-12(v-for="category of pictures")
     .h1.text-xl.md_text-3xl.font-semibold {{ category.name }}
@@ -86,13 +108,13 @@ const pictures = [
 .bg-secondary.text-secondary-content.mt-16
   .md_container.md_mx-auto.py-8.md_py-16.mx-6
     a(href='https://links.davimoura.com.br').h1.text-xl.font-bold Click here to contact me
-    .h1.text-sm All shots in this website is by Davi Moura.
+    .h1.text-sm Davi Moura - 2022.
 </template>
 
 <style>
 .v-lazy-image {
   filter: blur(10px);
-  transition: filter 1.6s;
+  transition: filter 1s;
   will-change: filter;
 }
 
