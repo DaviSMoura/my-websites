@@ -8,7 +8,7 @@ import MeCard from '../components/MeCard.vue'
     me-card
 </template>
 
-<style>
+<style scoped>
 #app {
   padding-top: 60px
 }
