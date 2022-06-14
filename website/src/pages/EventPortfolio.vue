@@ -79,8 +79,9 @@ const pictures = [
         .badge.badge-secondary.badge-outline.mr-2(v-for="tag of category.tags")
           | # {{ tag }}
     .grid.grid-cols-16.gap-4.mt-2
-      div(v-for="photo of category.photos" )
-        img(:src="photo.src || photo")
+      div(v-for="photo of category.photos")
+        a(:href="photo.src || photo")
+          img(:src="photo.src || photo")
         .h1.text-subtitle(v-if="photo.subtitle") {{ photo.subtitle }}
 .bg-secondary.text-secondary-content.mt-16
   .container.mx-auto.py-16.sm_px-16
