@@ -81,7 +81,7 @@ const pictures = [
     .grid.grid-cols-16.gap-4.mt-2.justify-items-center
       div(v-for="photo of category.photos")
         a(:href="photo.src || photo")
-          v-lazy-image.image-wrap(:width="2000" :src-placeholder="`${photo.src}&w=30`" :src="`${photo.src}&w=2000`")
+          v-lazy-image.image-wrap(:width="800" :src-placeholder="`${photo.src}&w=30`" :src="`${photo.src}&w=800`")
         .h1.text-sm(v-if="photo.subtitle") {{ photo.subtitle }}
 .bg-secondary.text-secondary-content.mt-16
   .md_container.md_mx-auto.py-8.md_py-16.mx-6
