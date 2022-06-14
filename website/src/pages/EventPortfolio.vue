@@ -1,12 +1,14 @@
 <script setup>
+import VLazyImage from 'v-lazy-image'
+
 const pictures = [
   {
     name: 'Rio de Janeiro',
     subtitle: 'Photos from Beach in Brazil',
     tags: ['beach', 'shotoniphone', 'rj'],
     photos: [
-      'https://storage.googleapis.com/website-portfolio/rj1.jpg',
-      'https://storage.googleapis.com/website-portfolio/rj2.jpg'
+      { src: 'https://davimoura.imgix.net/rj1.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/rj2.jpg?auto=compress' },
     ]
   },
   {
@@ -14,8 +16,8 @@ const pictures = [
     subtitle: 'Pictures shot on a rainy day in the a famous street in São Paulo.',
     tags: ['rain', 'shotoniphone', 'sp'],
     photos: [
-      'https://storage.googleapis.com/website-portfolio/sp1.jpg',
-      'https://storage.googleapis.com/website-portfolio/sp2.jpg'
+      { src: 'https://davimoura.imgix.net/sp1.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/sp2.jpg?auto=compress' },
     ]
   },
   {
@@ -23,11 +25,11 @@ const pictures = [
     subtitle: 'Pictures shot from event "Moro no Rio" on Leblon - RJ. Thanks to MBL & Vem Pra Rua to make this happen.',
     tags: ['politic', '50mm', 'rj'],
     photos: [
-      { src: 'https://storage.googleapis.com/website-portfolio/mir1.jpg', subtitle: "Ex-judge Sérgio Moro with supporters" },
-      { src: 'https://storage.googleapis.com/website-portfolio/mir2.jpg', subtitle: "Ex-judge Sérgio Moro speaking" },
-      { src: 'https://storage.googleapis.com/website-portfolio/mir3.jpg', subtitle: "Ex-judge Sérgio Moro with supporters" },
-      { src: 'https://storage.googleapis.com/website-portfolio/mir4.jpg', subtitle: "General Santos Cruz speaking" },
-      { src: 'https://storage.googleapis.com/website-portfolio/mir5.jpg', subtitle: "Audience" },
+      { src: 'https://davimoura.imgix.net/mir1.jpg?auto=compress', subtitle: "Ex-judge Sérgio Moro with supporters" },
+      { src: 'https://davimoura.imgix.net/mir2.jpg?auto=compress', subtitle: "Ex-judge Sérgio Moro speaking" },
+      { src: 'https://davimoura.imgix.net/mir3.jpg?auto=compress', subtitle: "Ex-judge Sérgio Moro with supporters" },
+      { src: 'https://davimoura.imgix.net/mir4.jpg?auto=compress', subtitle: "General Santos Cruz speaking" },
+      { src: 'https://davimoura.imgix.net/mir5.jpg?auto=compress', subtitle: "Audience" },
     ]
   },
   {
@@ -35,10 +37,10 @@ const pictures = [
     subtitle: 'Pictures shot on "Congresso MBL" in Mooca - SP.',
     tags: ['politic', 'sp', 'shotoniphone'],
     photos: [
-      'https://storage.googleapis.com/website-portfolio/congmbl1.jpg',
-      { src: 'https://storage.googleapis.com/website-portfolio/congmbl2.jpg', subtitle: "Congressman Kim Kataguiri doing an interview" },
-      { src: 'https://storage.googleapis.com/website-portfolio/congmbl3.jpg', subtitle: "Felippe Hermes - Founder Spotniks; Columnist Infomoney; From QRCapital" },
-      'https://storage.googleapis.com/website-portfolio/congmbl4.jpg',
+      { src: 'https://davimoura.imgix.net/congmbl1.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/congmbl2.jpg?auto=compress', subtitle: "Congressman Kim Kataguiri doing an interview" },
+      { src: 'https://davimoura.imgix.net/congmbl3.jpg?auto=compress', subtitle: "Felippe Hermes - Spotniks; Infomoney Columnist; QRCapital" },
+      { src: 'https://davimoura.imgix.net/congmbl4.jpg?auto=compress', subtitle: "Congressman Kim Kataguiri - Debate championship" },
     ]
   },
   {
@@ -46,10 +48,10 @@ const pictures = [
     subtitle: 'Pictures shot on Copacabana - SP.',
     tags: ['protest', 'rj', 'shotoniphone'],
     photos: [
-      'https://storage.googleapis.com/website-portfolio/protest1.jpg',
-      { src: 'https://storage.googleapis.com/website-portfolio/protest2.jpg', subtitle: "Letícia Arsenio - Partido Novo" },
-      { src: 'https://storage.googleapis.com/website-portfolio/protest3.jpg', subtitle: "Letícia Arsenio doing interview." },
-      'https://storage.googleapis.com/website-portfolio/protest4.jpg',
+      { src: 'https://davimoura.imgix.net/protest1.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/protest2.jpg?auto=compress', subtitle: "Letícia Arsenio." },
+      { src: 'https://davimoura.imgix.net/protest3.jpg?auto=compress', subtitle: "Letícia Arsenio doing interview." },
+      { src: 'https://davimoura.imgix.net/protest4.jpg?auto=compress' },
     ]
   },
   {
@@ -57,9 +59,9 @@ const pictures = [
     subtitle: 'Pictures from religious event "SALT".',
     tags: ['church', 'rj', 'salt'],
     photos: [
-      'https://storage.googleapis.com/website-portfolio/salt1.jpg',
-      'https://storage.googleapis.com/website-portfolio/salt2.jpg',
-      'https://storage.googleapis.com/website-portfolio/salt3.jpg',
+      { src: 'https://davimoura.imgix.net/salt1.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/salt2.jpg?auto=compress' },
+      { src: 'https://davimoura.imgix.net/salt3.jpg?auto=compress' },
     ]
   },
 ]
@@ -67,25 +69,34 @@ const pictures = [
 
 <template lang="pug">
 .bg-secondary.text-secondary-content
-  .container.mx-auto.py-16.sm_px-16
-    .h1.text-5xl.font-bold Events Portfolio
-    .h1.text-3xl.font-semibold Im not a professional photographer but its a hobby.
-.container.mx-auto.sm_px-16
-  .pt-16(v-for="category of pictures")
-    .h1.text-2xl.font-semibold {{ category.name }}
-    .h1.text-subtitle.flex-col {{ category.subtitle }}
+  .md_container.md_mx-auto.py-8.md_py-16.mx-6
+    .h1.font-3xl.sm_text-5xl.font-bold Events Portfolio
+    .h1.font-subtitle.sm_text-3xl.font-semibold Im not a professional photographer but its a hobby.
+.md_container.md_mx-auto.mx-6
+  .pt-6.md_pt-12(v-for="category of pictures")
+    .h1.text-xl.md_text-3xl.font-semibold {{ category.name }}
+    .h1.text-sm.flex-col {{ category.subtitle }}
     .badge.badge-secondary.badge-outline.mr-2(v-for="tag of category.tags")
       | # {{ tag }}
-    .grid.grid-cols-16.gap-4.mt-2
+    .grid.grid-cols-16.gap-4.mt-2.justify-items-center
       div(v-for="photo of category.photos")
         a(:href="photo.src || photo")
-          img(:src="photo.src || photo")
-        .h1.text-subtitle(v-if="photo.subtitle") {{ photo.subtitle }}
+          v-lazy-image.image-wrap(:width="2000" :src-placeholder="`${photo.src}&w=30`" :src="`${photo.src}&w=2000`")
+        .h1.text-sm(v-if="photo.subtitle") {{ photo.subtitle }}
 .bg-secondary.text-secondary-content.mt-16
-  .container.mx-auto.py-16.sm_px-16
-    a(href='https://links.davimoura.com.br').h1.text-2xl.font-bold Click here to contact me
-    .h1.text-subtitle All shots in this website is by Davi Moura.
+  .md_container.md_mx-auto.py-8.md_py-16.mx-6
+    a(href='https://links.davimoura.com.br').h1.text-xl.font-bold Click here to contact me
+    .h1.text-sm All shots in this website is by Davi Moura.
 </template>
 
 <style>
+.v-lazy-image {
+  filter: blur(10px);
+  transition: filter 1.6s;
+  will-change: filter;
+}
+
+.v-lazy-image-loaded {
+  filter: blur(0);
+}
 </style>
