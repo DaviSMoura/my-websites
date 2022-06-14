@@ -10,5 +10,4 @@
   .flex-col
     .text-2xl.font-bold Davi Moura
     .text-xl.font-semibold Full Stack Developer
-    .text-base.font-semibold Em construção
 </template>
