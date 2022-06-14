@@ -73,11 +73,9 @@ const pictures = [
 .container.mx-auto.sm_px-16
   .pt-16(v-for="category of pictures")
     .h1.text-2xl.font-semibold {{ category.name }}
-    .flex.flex-row.items-center.gap-4
-      .h1.text-subtitle.flex-col {{ category.subtitle }}
-      .flex-col
-        .badge.badge-secondary.badge-outline.mr-2(v-for="tag of category.tags")
-          | # {{ tag }}
+    .h1.text-subtitle.flex-col {{ category.subtitle }}
+    .badge.badge-secondary.badge-outline.mr-2(v-for="tag of category.tags")
+      | # {{ tag }}
     .grid.grid-cols-16.gap-4.mt-2
       div(v-for="photo of category.photos")
         a(:href="photo.src || photo")
