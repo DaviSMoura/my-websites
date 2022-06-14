@@ -1,38 +1,12 @@
 <script setup>
-import rj1 from '../assets/portfolio/rj1.jpg'
-import rj2 from '../assets/portfolio/rj2.jpg'
-
-import sp1 from '../assets/portfolio/sp1.jpg'
-import sp2 from '../assets/portfolio/sp2.jpg'
-
-import mir1 from '../assets/portfolio/mir1.jpg'
-import mir2 from '../assets/portfolio/mir2.jpg'
-import mir3 from '../assets/portfolio/mir3.jpg'
-import mir4 from '../assets/portfolio/mir4.jpg'
-import mir5 from '../assets/portfolio/mir5.jpg'
-
-import congmbl1 from '../assets/portfolio/congmbl1.jpg'
-import congmbl2 from '../assets/portfolio/congmbl2.jpg'
-import congmbl3 from '../assets/portfolio/congmbl3.jpg'
-import congmbl4 from '../assets/portfolio/congmbl4.jpg'
-
-import protest1 from '../assets/portfolio/protest1.jpg'
-import protest2 from '../assets/portfolio/protest2.jpg'
-import protest3 from '../assets/portfolio/protest3.jpg'
-import protest4 from '../assets/portfolio/protest4.jpg'
-
-import salt1 from '../assets/portfolio/salt1.jpg'
-import salt2 from '../assets/portfolio/salt2.jpg'
-import salt3 from '../assets/portfolio/salt3.jpg'
-
 const pictures = [
   {
     name: 'Rio de Janeiro',
     subtitle: 'Photos from Beach in Brazil',
     tags: ['beach', 'shotoniphone', 'rj'],
     photos: [
-      rj1,
-      rj2
+      'https://storage.googleapis.com/website-portfolio/rj1.jpg',
+      'https://storage.googleapis.com/website-portfolio/rj2.jpg'
     ]
   },
   {
@@ -40,8 +14,8 @@ const pictures = [
     subtitle: 'Pictures shot on a rainy day in the a famous street in São Paulo.',
     tags: ['rain', 'shotoniphone', 'sp'],
     photos: [
-      sp1,
-      sp2
+      'https://storage.googleapis.com/website-portfolio/sp1.jpg',
+      'https://storage.googleapis.com/website-portfolio/sp2.jpg'
     ]
   },
   {
@@ -49,11 +23,11 @@ const pictures = [
     subtitle: 'Pictures shot from event "Moro no Rio" on Leblon - RJ. Thanks to MBL & Vem Pra Rua to make this happen.',
     tags: ['politic', '50mm', 'rj'],
     photos: [
-      { src: mir1, subtitle: "Ex-judge Sérgio Moro with supporters" },
-      { src: mir2, subtitle: "Ex-judge Sérgio Moro speaking" },
-      { src: mir3, subtitle: "Ex-judge Sérgio Moro with supporters" },
-      { src: mir4, subtitle: "General Santos Cruz speaking" },
-      { src: mir5, subtitle: "Audience" },
+      { src: 'https://storage.googleapis.com/website-portfolio/mir1.jpg', subtitle: "Ex-judge Sérgio Moro with supporters" },
+      { src: 'https://storage.googleapis.com/website-portfolio/mir2.jpg', subtitle: "Ex-judge Sérgio Moro speaking" },
+      { src: 'https://storage.googleapis.com/website-portfolio/mir3.jpg', subtitle: "Ex-judge Sérgio Moro with supporters" },
+      { src: 'https://storage.googleapis.com/website-portfolio/mir4.jpg', subtitle: "General Santos Cruz speaking" },
+      { src: 'https://storage.googleapis.com/website-portfolio/mir5.jpg', subtitle: "Audience" },
     ]
   },
   {
@@ -61,10 +35,10 @@ const pictures = [
     subtitle: 'Pictures shot on "Congresso MBL" in Mooca - SP.',
     tags: ['politic', 'sp', 'shotoniphone'],
     photos: [
-      congmbl1,
-      { src: congmbl2, subtitle: "Congressman Kim Kataguiri doing an interview" },
-      { src: congmbl3, subtitle: "Felippe Hermes - Founder Spotniks; Columnist Infomoney; From QRCapital" },
-      congmbl4,
+      'https://storage.googleapis.com/website-portfolio/congmbl1.jpg',
+      { src: 'https://storage.googleapis.com/website-portfolio/congmbl2.jpg', subtitle: "Congressman Kim Kataguiri doing an interview" },
+      { src: 'https://storage.googleapis.com/website-portfolio/congmbl3.jpg', subtitle: "Felippe Hermes - Founder Spotniks; Columnist Infomoney; From QRCapital" },
+      'https://storage.googleapis.com/website-portfolio/congmbl4.jpg',
     ]
   },
   {
@@ -72,10 +46,10 @@ const pictures = [
     subtitle: 'Pictures shot on Copacabana - SP.',
     tags: ['protest', 'rj', 'shotoniphone'],
     photos: [
-      protest1,
-      { src: protest2, subtitle: "Letícia Arsenio - Partido Novo" },
-      { src: protest3, subtitle: "Letícia Arsenio doing interview." },
-      protest4,
+      'https://storage.googleapis.com/website-portfolio/protest1.jpg',
+      { src: 'https://storage.googleapis.com/website-portfolio/protest2.jpg', subtitle: "Letícia Arsenio - Partido Novo" },
+      { src: 'https://storage.googleapis.com/website-portfolio/protest3.jpg', subtitle: "Letícia Arsenio doing interview." },
+      'https://storage.googleapis.com/website-portfolio/protest4.jpg',
     ]
   },
   {
@@ -83,9 +57,9 @@ const pictures = [
     subtitle: 'Pictures from religious event "SALT".',
     tags: ['church', 'rj', 'salt'],
     photos: [
-      salt1,
-      salt2,
-      salt3,
+      'https://storage.googleapis.com/website-portfolio/salt1.jpg',
+      'https://storage.googleapis.com/website-portfolio/salt2.jpg',
+      'https://storage.googleapis.com/website-portfolio/salt3.jpg',
     ]
   },
 ]
