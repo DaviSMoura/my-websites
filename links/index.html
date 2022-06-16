@@ -55,12 +55,16 @@
     </div>
   </div>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5E2R747WX"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-E5E2R747WX');
+    $.getJSON('https://api.ipify.org?format=jsonp&callback=?', function(data) {
+      gtag('event', 'ipify', data);
+    });
   </script>
   <script>
     (function(h,o,t,j,a,r){
