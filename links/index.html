@@ -61,9 +61,12 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-E5E2R747WX');
+    gtag('config', 'G-E5E2R747WX', {
+      custom_map: {'dimension1': 'ipify'}
+    });
     $.getJSON('https://api.ipify.org?format=jsonp&callback=?', function(data) {
-      gtag('event', 'ipify', data);
+      gtag('event', 'ipify', { ipify: data.ip });
+      console.log('Finished Analytics.')
     });
   </script>
   <script>
