@@ -58,7 +58,7 @@ steps:
     "build",
     "-t",
     "gcr.io/$PROJECT_ID/site-shortlinks",
-    "shortlinks",
+    "l",
   ]
 - name: 'gcr.io/cloud-builders/docker'
   id: Push new shortlinks image
