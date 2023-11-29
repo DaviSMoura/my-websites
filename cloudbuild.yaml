@@ -51,7 +51,34 @@ steps:
     "--region",
     "us-central1",
   ]
+# Build ShortLinks Website
+- name: 'gcr.io/cloud-builders/docker'
+  id: Build the shortlinks image
+  args: [
+    "build",
+    "-t",
+    "gcr.io/$PROJECT_ID/site-shortlinks",
+    "shortlinks",
+  ]
+- name: 'gcr.io/cloud-builders/docker'
+  id: Push new shortlinks image
+  args: [
+    "push",
+    "gcr.io/$PROJECT_ID/site-shortlinks",
+  ]
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: Deploy shortlinks to Cloud Run
+  args: [
+    "run",
+    "deploy",
+    "site-shortlinks",
+    "--image",
+    "gcr.io/$PROJECT_ID/site-shortlinks",
+    "--region",
+    "us-central1",
+  ]
 
 images:
   - "gcr.io/$PROJECT_ID/site-links"
+  - "gcr.io/$PROJECT_ID/site-shortlinks"
   - "gcr.io/$PROJECT_ID/site"

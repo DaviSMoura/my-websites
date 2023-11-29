@@ -1,0 +1,9 @@
+# remove unnecessary files from image
+.git
+.gitignore
+.dockerignore
+docker-compose.yml
+Dockerfile
+LICENSE.md
+README.md
+node_modules
