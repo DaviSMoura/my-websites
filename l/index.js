@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import axios from 'axios'
 import express from 'express'
 
@@ -10,7 +11,10 @@ app.get('/', (req, res) => {
 
 app.get('/:name', async (req, res) => {
   const { name } = req.params
-  const { data } = await axios.get(`https://api.ordo.davimoura.dev/shortlinks/${name}`)
+  const ip = req.ip
+  const { data } = await axios.get(`https://api.ordo.davimoura.dev/shortlinks/${name}`, {
+    params: { ip, headers: req.headers }
+  })
   const link = data?.url
   if (!link) return res.redirect('https://links.davimoura.dev')
   res.redirect(link)
