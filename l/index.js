@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.get('/:name', async (req, res) => {
   const { name } = req.params
-  const ip = req.ip
+  const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress)?.replace('::ffff:', '')
   const { data } = await axios.get(`https://api.ordo.davimoura.dev/shortlinks/${name}`, {
     params: { ip, headers: req.headers }
   })
